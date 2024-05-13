@@ -1,0 +1,15 @@
+------------------ TODO ---------------------
+
+// REGISTER
+
+- REGEX PASSWORD
+
+
+// MAIN
+
+- SEARCH BAR
+- SHOW BOOKS IN GRID PATTERN USING CSS GRID
+
+// DATABASE
+
+- MAKE IT
