@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     if(!isUsernameInvalid($result) && isPasswordInvalid($password, $result['User_password'])) {
-        $errors['invalid_info'] = "111111Podane dane są nieprawidłowe";
+        $errors['invalid_info'] = "Podane dane są nieprawidłowe";
     }
 
     session_start();
@@ -37,6 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     $_SESSION['user_id'] = $result['User_ID'];
     $_SESSION['user_name'] = $result['User_name'];
+    $_SESSION['user_admin'] = $result['User_Admin'];
 
     header("Location: ../../login.php?login=success");
 

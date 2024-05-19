@@ -1,3 +1,12 @@
+<?php
+require_once 'modules/database.php';
+require_once 'modules/main/main_model.php';
+require_once 'modules/main/main_contr.php';
+require_once 'modules/main/main_view.php';
+require_once 'modules/views.php';
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,37 +19,33 @@
 
 <body>
     <div class="main">
-        <div class="navbar">
-            <div class="navbar__links">
-                <a class="navbar__links--home" href="#">Home</a>
-                <input type="search" placeholder="Wyszukaj..." />
-                <div class="navbar__links--buttons">
-                    <a href="#">About</a>
-                    <a href="#">Products</a>
-                    <a href="#">Blog</a>
-                    <?php
-                    session_start();
-                    if(isset($_SESSION['user_id'])) {
-                        echo '<a href="logout.php">Wyloguj sie</a>';
-                    }else {
-                        
-                        echo '<a href="login.php">Zaloguj sie</a>';
-                    }
-                    ?>
-                    
+        <?php viewStandard(); ?>
+
+        <h1>Nasze książki</h1>
+        <div class="grid-container">
+            <!-- <div onclick="location.href='book.php?name=Utopce&author=Katarzyna-Puzyńska';" style="cursor: pointer;" class="grid-item">
+                <div class="grid-item-image">
+                    <img src="images/template.png">
+                </div>
+
+                <div class="grid-item-info">
+                    <span>Utopce</span>
+                    <p>Katarzyna Puzyńska</p>
                 </div>
             </div>
+            <div class="grid-item">2</div>
+            <div class="grid-item">3</div>
+            <div class="grid-item">4</div>
+            <div class="grid-item">5</div>
+            <div class="grid-item">6</div>
+            <div class="grid-item">7</div>
+            <div class="grid-item">8</div>
+            <div class="grid-item">9</div> -->
+
+            <?php
+            showBookMainPage(getAllBookMainPage($db));
+            ?>
         </div>
-
-        <?php
-
-        if(isset($_SESSION['user_id'])) {
-            echo $_SESSION['user_id'];
-            echo ". Zalogowano jako " . $_SESSION['user_name'];
-        } else {
-            echo "Niezalogowano";
-        }
-        ?>
     </div>
 </body>
 

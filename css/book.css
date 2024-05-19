@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Poppins';
+}
+
+.navbar {
+    height: 60px;
+    border: 2px solid red;
+}
+
+
+
+.navbar__links {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__links--buttons {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar__links a {
+    padding: 0 20px;
+}
+
+.book {
+
+    height: 100vh;
+    background-color: #f0f0f0;
+}
+
+.book__top {
+    width: 60%;
+    height: 65%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.book__image {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.book__image img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.book__info {
+    height: 600px;
+    width: 400px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.book__bottom {
+    width: 60%;
+    height: 35%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}

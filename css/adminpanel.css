@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin: 0px;
+    padding: 0px;
+    font-size: 16px;
+}
+
+html {
+    font-family: 'Poppins';
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 8px 8px;
+    width: 100%;
+    margin: 0 10px 0 10px;
+}
+
+.book__description {
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: #f7f7f7;
+}
+
+tr:nth-child(odd) {
+    background-color: white;
+}
+
+th {
+    text-align: left;
+}
+
+table input {
+    color: #fff;
+    width: 75px;
+    height: 40px;
+    padding: 10px;
+    box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+    background: #2f2f2f;
+    box-sizing: border-box;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.navbar {
+    height: 60px;
+    border: 2px solid red;
+}
+
+.navbar__links {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar__links--buttons {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.navbar__links a {
+    padding: 0 20px;
+}
+
