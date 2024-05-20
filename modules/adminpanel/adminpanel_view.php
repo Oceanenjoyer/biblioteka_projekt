@@ -35,48 +35,6 @@ function showAllUsersTable($result)
 
 // ==================== BOOKS =====================
 
-// function showAllBooksTable($result) {
-//     echo "<table>
-//             <tr>
-//                 <th>ID</th>
-//                 <th>Tytuł</th>
-//                 <th>Gatunek</th>
-//                 <th>Autor</th>
-//                 <th>Opis</th>
-//                 <th>Data wydania</th>
-//                 <th>Liczba stron</th>
-//                 <th>Ścieżka</th>
-//                 <th>Operacje</th>
-//             </tr>
-//         ";
-
-//     while ($row = $result->fetch_assoc()) {
-//         echo '<tr>';
-//         echo '<td>' . $row['Book_ID'] . "</td>";
-//         echo '<td>' . $row['Book_title'] . "</td>";
-//         echo '<td>' . $row['Book_genre'] . "</td>";
-//         echo '<td>' . $row['Book_author'] . "</td>";
-//         echo '<td>' . substr($row['Book_description'], 0, 40) . '...' . "</td>";
-//         echo '<td>' . $row['Book_release'] . "</td>";
-//         echo '<td>' . $row['Book_pages'] . "</td>";
-//         echo '<td>' . $row['Book_imgpath'] . "</td>";
-//         echo "<td>
-//                     <form method='POST'>
-//                         <input type=hidden name=idbook value=" . $row["Book_ID"] . " >
-//                         <input type=submit onclick='return confirm(\"Czy na pewno chcesz usunąć?\");' value=Usuń name=deletebook >
-//                         <input type=hidden name=titlebook value=" . urlencode($row["Book_title"]) . " >
-//                         <input type=hidden name=authorbook value=" . urlencode($row["Book_author"]) . " >
-//                         <input type=submit value=Idź name=gotobook >
-//                     </form>
-//                     </td>";
-//         echo '</tr>';
-//     }
-//     echo "</table>";
-
-
-
-// }
-
 
 function showAllBooksTable($result) {
     echo "<table>
@@ -125,14 +83,14 @@ function showBookTools() {
 
     echo '<div class="book__tools">
             <h1>Dodaj ksiazke</h1>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="uploadbook.php" method="POST" enctype="multipart/form-data">
                 <input type="text" name="Book_title" placeholder="Tytuł ksiazki...">
                 <input type="text" name="Book_genre" placeholder="Gatunek ksiazki...">
                 <input type="text" name="Book_author" placeholder="Autor ksiazki...">
                 <input type="text" name="Book_description" placeholder="Opis ksiazki...">
                 <input type="text" name="Book_release" placeholder="Data wydania ksiazki (YYYY-MM-DD)...)">
                 <input type="text" name="Book_pages" placeholder="Liczba stron ksiazki...">
-                <input type="file" name="Book_imgpath" placeholder="Zdjecie ksiazki...">
+                <input type="file" name="Book_img" placeholder="Zdjecie ksiazki...">
                 <input type="submit" name="Book_submit" value="Dodaj ksiazke">
             </form>
         </div>';

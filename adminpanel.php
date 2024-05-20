@@ -34,6 +34,7 @@ require_once 'modules/views.php';
         deleteUser($db);
         deleteBook($db);
         gotoBook();
+        showBookTools();
         if (isset($_GET['page'])) {
             $currentPage = $_GET['page'];
 
