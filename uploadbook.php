@@ -1,6 +1,6 @@
 <?php
-
-
+define('MB', 1048576);
+require_once 'modules/database.php';
 
 
 $bookTitle = $_POST['Book_title'];
@@ -16,46 +16,42 @@ $newfilename = round(microtime(true)) . '.' . end($temp);
 $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($newfilename,PATHINFO_EXTENSION));
 
-// Check if image file is a actual image or fake image
 if(isset($_POST['Book_submit'])) {
     $check = getimagesize($_FILES['Book_img']['tmp_name']);
 
   if($check !== false) {
-    echo "File is an image - " . $check["mime"] . ".";
     $uploadOk = 1;
   } else {
-    echo "File is not an image.";
+    echo "Dodany plik nie jest zdjęciem";
     $uploadOk = 0;
   }
 }
 
-// Check if file already exists
 if (file_exists($newfilename)) {
-  echo "Sorry, file already exists.";
+  echo "Dodany plik już istnieje";
   $uploadOk = 0;
 }
 
-// Check file size
-// if ($_FILES["Book_img"]["size"] > 500000) {
-//   echo "Sorry, your file is too large.";
-//   $uploadOk = 0;
-// }
-
-// Allow certain file formats
-if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-&& $imageFileType != "gif" ) {
-  echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+if ($_FILES["Book_img"]["size"] > 10 * MB) {
+  echo "Dodany plik jest za duży";
   $uploadOk = 0;
 }
 
-// Check if $uploadOk is set to 0 by an error
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+  echo "Tylko pliki o formacie JPG, JPEG, PNG są dozwolone";
+  $uploadOk = 0;
+}
+
 if ($uploadOk == 0) {
-  echo "Sorry, your file was not uploaded.";
-// if everything is ok, try to upload file
+  echo "Plik nie został dodany.";
 } else {
-  if (move_uploaded_file($_FILES["Book_img"]["tmp_name"],$target_dir . $newfilename)) {
-    echo "The file ". htmlspecialchars( basename( $_FILES["Book_img"]["name"])). " has been uploaded.";
-  } else {
-    echo "Sorry, there was an error uploading your file.";
-  }
+    if($result = $db->query("INSERT INTO books (Book_author, Book_genre, Book_title, Book_description, Book_release, Book_pages, Book_imgpath) VALUES (?, ?, ?, ?, ?, ?, ?)", [$bookAuthor, $bookGenre, $bookTitle, $bookDescription, $bookRelease, $bookPages, $target_dir . $newfilename]) {
+      if (move_uploaded_file($_FILES["Book_img"]["tmp_name"],$target_dir . $newfilename)) {
+        echo "Plik: ". htmlspecialchars( basename( $_FILES["Book_img"]["name"])). " został dodany";
+      }else {
+        echo "Wystąpił błąd przy dodawaniu pliku";
+      }
+    }else {
+      echo "Wystąpił błąd przy dodawaniu pliku";
+    }
 }

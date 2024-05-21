@@ -88,7 +88,7 @@ function showBookTools() {
                 <input type="text" name="Book_genre" placeholder="Gatunek ksiazki...">
                 <input type="text" name="Book_author" placeholder="Autor ksiazki...">
                 <input type="text" name="Book_description" placeholder="Opis ksiazki...">
-                <input type="text" name="Book_release" placeholder="Data wydania ksiazki (YYYY-MM-DD)...)">
+                <input type="date" name="Book_release" placeholder="Data wydania ksiazki (YYYY-MM-DD)...)">
                 <input type="text" name="Book_pages" placeholder="Liczba stron ksiazki...">
                 <input type="file" name="Book_img" placeholder="Zdjecie ksiazki...">
                 <input type="submit" name="Book_submit" value="Dodaj ksiazke">
