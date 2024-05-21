@@ -28,6 +28,10 @@ require_once 'modules/views.php';
             ?>
         </div>
     </div>
+
+    <footer>
+        <a href="info.php">Fonty i kolory</a>
+    </footer>
 </body>
 
 </html>

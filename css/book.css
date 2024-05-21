@@ -8,6 +8,7 @@
 
 .navbar {
     height: 60px;
+    background-color: #f7f7f7;
 }
 
 
@@ -33,7 +34,7 @@
 .book {
 
     height: 100vh;
-    background-color: #f0f0f0;
+    background-color: #ffffff;
 }
 
 .book__top {

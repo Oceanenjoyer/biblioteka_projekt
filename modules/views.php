@@ -5,10 +5,10 @@ function viewStandard()
     echo '
     <div class="navbar">
         <div class="navbar__links">
-            <a class="navbar__links--home" href="index.php">Strona główna</a>
+            <a class="navbar__links--home" href="index.php"><img src="images/logo.png" style="width: 250px; height: 60px"></a>
             <form method="GET" action="search.php">
                 <input type="search" name="search" placeholder="Wyszukaj...">
-                <input type="submit" value="Search">
+                <input type="submit" value="Wyszukaj">
             </form>
             <div class="navbar__links--buttons">';
 
@@ -34,7 +34,7 @@ function viewAdmin()
     echo '
     <div class="navbar">
     <div class="navbar__links">
-        <a class="navbar__links--home" href="index.php">Strona główna</a>
+        <a class="navbar__links--home" href="index.php"><img src="images/logo.png" style="width: 250px; height: 60px"></a>
         <div class="navbar__links--buttons">
             <a href="adminpanel.php?page=main">Główna</a>
             <a href="adminpanel.php?page=users">Użytkownicy</a>

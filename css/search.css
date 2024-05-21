@@ -3,19 +3,16 @@
 * {
   margin: 0px;
   padding: 0px;
-}
-
-html {
   font-family: 'Poppins';
 }
 
 .navbar {
   height: 60px;
-  background-color: white;
+  background-color: #f7f7f7;
 }
 
 .main {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .navbar__links {

@@ -3,19 +3,34 @@
 * {
   margin: 0px;
   padding: 0px;
+  font-family: 'Poppins';
 }
 
-html {
-  font-family: 'Poppins';
+footer {
+  text-align: center;
+  padding: 3px;
+  background-color: #f7f7f7;
+  color: #000000;
+}
+
+a {
+  text-decoration: none;
+  color: #000000;
+}
+
+a:hover {
+  text-decoration: underline;
+  color:#4a4a4a; 
+  cursor:pointer;  
 }
 
 .navbar {
   height: 60px;
-  background-color: white;
+  background-color: #f7f7f7;
 }
 
 .main {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
 }
 
 .navbar__links {
@@ -51,7 +66,7 @@ html {
 .grid-item {
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  background-color: white;
+  background-color: #ffffff;
   border-radius: 5px;
   font-size: 30px;
   padding: 10px;

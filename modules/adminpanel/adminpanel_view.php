@@ -53,19 +53,6 @@ function showAllBooksTable($result) {
 
     while ($row = $result->fetch_assoc()) {
         echo '<table>';
-
-        // echo "<thead>
-        // <tr>
-        //     <th width='3%'></th>
-        //     <th width='20%'></th>
-        //     <th width='10%'></th>
-        //     <th width='15%'></th>
-        //     <th width='15%'></th>
-        //     <th width='7%'></th>
-        //     <th width='10%'></th>
-        //     <th width='15%'></th>
-        // </tr>
-        // </thead>";
         echo '<tr>';
         echo '<td>' . $row['Book_ID'] . "</td>";
         echo '<td>' . $row['Book_title'] . "</td>";
