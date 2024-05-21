@@ -33,6 +33,10 @@ th {
     text-align: left;
 }
 
+th, td {
+    width: 10%;
+}
+
 table input {
     color: #fff;
     width: 75px;
@@ -47,7 +51,6 @@ table input {
 
 .navbar {
     height: 60px;
-    border: 2px solid red;
 }
 
 .navbar__links {

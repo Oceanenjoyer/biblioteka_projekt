@@ -34,7 +34,6 @@ require_once 'modules/views.php';
         deleteUser($db);
         deleteBook($db);
         gotoBook();
-        showBookTools();
         if (isset($_GET['page'])) {
             $currentPage = $_GET['page'];
 
@@ -43,7 +42,7 @@ require_once 'modules/views.php';
                     showAllUsersTable(getAllUsers($db));
                     break;
                 case 'books':
-                    // showBookTools();
+                    showBookTools();
                     showAllBooksTable(getAllBooks($db));
                     break;
                 case 'main':

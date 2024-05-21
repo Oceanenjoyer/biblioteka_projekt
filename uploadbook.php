@@ -32,10 +32,10 @@ if (file_exists($newfilename)) {
   $uploadOk = 0;
 }
 
-if ($_FILES["Book_img"]["size"] > 10 * MB) {
-  echo "Dodany plik jest za duży";
-  $uploadOk = 0;
-}
+// if ($_FILES["Book_img"]["size"] > 10 * MB) {
+//   echo "Dodany plik jest za duży";
+//   $uploadOk = 0;
+// }
 
 if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
   echo "Tylko pliki o formacie JPG, JPEG, PNG są dozwolone";
@@ -45,13 +45,14 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 if ($uploadOk == 0) {
   echo "Plik nie został dodany.";
 } else {
-    if($result = $db->query("INSERT INTO books (Book_author, Book_genre, Book_title, Book_description, Book_release, Book_pages, Book_imgpath) VALUES (?, ?, ?, ?, ?, ?, ?)", [$bookAuthor, $bookGenre, $bookTitle, $bookDescription, $bookRelease, $bookPages, $target_dir . $newfilename]) {
-      if (move_uploaded_file($_FILES["Book_img"]["tmp_name"],$target_dir . $newfilename)) {
-        echo "Plik: ". htmlspecialchars( basename( $_FILES["Book_img"]["name"])). " został dodany";
-      }else {
-        echo "Wystąpił błąd przy dodawaniu pliku";
-      }
-    }else {
-      echo "Wystąpił błąd przy dodawaniu pliku";
-    }
+  if(move_uploaded_file($_FILES["Book_img"]["tmp_name"],$target_dir . $newfilename)) {
+    echo "Plik: ". htmlspecialchars( basename( $_FILES["Book_img"]["name"])). " został dodany";
+    $db->query("INSERT INTO books (Book_author, Book_genre, Book_title, Book_description, Book_release, Book_pages, Book_imgpath) VALUES (?, ?, ?, ?, ?, ?, ?)", [$bookAuthor, $bookGenre, $bookTitle, $bookDescription, $bookRelease, $bookPages, $target_dir . $newfilename]);
+    header("refresh:2;url=adminpanel.php?page=books");
+  }else {
+    echo "Plik nie został dodany2.";
+  }
+
 }
+
+

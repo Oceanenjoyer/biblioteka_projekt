@@ -31,7 +31,7 @@ session_start();
         </div>
 
         <div class="login__options">
-            <input type="checkbox"/>
+            <input type="checkbox" name="rememberme"/>
             <label>Zapamiętaj mnie</label>
         </div>
 

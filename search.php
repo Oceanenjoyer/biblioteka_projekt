@@ -20,18 +20,19 @@ viewStandard();
 
 <body>
     <div class="main">
-        <div class="grid-container">
+        
+
             <?php
+            $searched = $_GET['search'];
+            echo "<div class='searched'><h1>Wyszukiwanie dla: " . $searched . "</h1></div>";
+            echo '<div class="grid-container">';
             if(isset($_GET['search']) && $_GET['search'] != ""){
-                $searched = $_GET['search'];
-                echo 'Wyszukiwanie dla: ' . $searched;
-    
                 $search = getSearchedBooks($db, $searched);
                 showBookSearchInfo($search);
             } else{
                 echo 'Podaj książke do wyszukania';
             }
-
+            echo '</div>';
             ?>
         </div>
     </div>

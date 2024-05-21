@@ -53,12 +53,25 @@ function showAllBooksTable($result) {
 
     while ($row = $result->fetch_assoc()) {
         echo '<table>';
+
+        // echo "<thead>
+        // <tr>
+        //     <th width='3%'></th>
+        //     <th width='20%'></th>
+        //     <th width='10%'></th>
+        //     <th width='15%'></th>
+        //     <th width='15%'></th>
+        //     <th width='7%'></th>
+        //     <th width='10%'></th>
+        //     <th width='15%'></th>
+        // </tr>
+        // </thead>";
         echo '<tr>';
         echo '<td>' . $row['Book_ID'] . "</td>";
         echo '<td>' . $row['Book_title'] . "</td>";
         echo '<td>' . $row['Book_genre'] . "</td>";
         echo '<td>' . $row['Book_author'] . "</td>";
-        echo '<td>' . substr($row['Book_description'], 0, 40) . '...  ' . '<input id="show-button-' . $row['Book_ID'] . '" type="button" onclick="showDescription(' . $row['Book_ID'] . ')" value="Pokaż" id="show">' . "</td>";
+        echo '<td>' . '<input id="show-button-' . $row['Book_ID'] . '" type="button" onclick="showDescription(' . $row['Book_ID'] . ')" value="Pokaż" id="show">' . "</td>";
         echo '<td>' . $row['Book_release'] . "</td>";
         echo '<td>' . $row['Book_pages'] . "</td>";
         echo '<td>' . $row['Book_imgpath'] . "</td>";
@@ -76,6 +89,7 @@ function showAllBooksTable($result) {
         echo '<div class="book__description" id="description-' . $row['Book_ID'] . '" style="display:none">' . $row['Book_description'] . '</div>';
     }
 
+    // substr($row['Book_description'], 0, 40) . '...  ' .
 
 }
 
